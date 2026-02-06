@@ -1,0 +1,11 @@
+.loading-spinner-container {
+  backdrop-filter: blur(10px);
+}
+
+.loading-ring {
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+.loading-ring-2 {
+  border-top-color: rgba(124, 58, 237, 1);
+}

@@ -1,0 +1,7 @@
+.contact-info-card {
+  cursor: pointer;
+}
+
+.contact-info-card:hover {
+  transform: translateX(5px);
+}

@@ -1,0 +1,7 @@
+.floating-elements {
+  z-index: 0;
+}
+
+.floating-element {
+  filter: blur(40px);
+}

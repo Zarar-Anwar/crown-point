@@ -1,0 +1,7 @@
+.particle-background {
+  z-index: 0;
+}
+
+.particle {
+  filter: blur(1px);
+}

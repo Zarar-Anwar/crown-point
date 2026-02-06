@@ -1,0 +1,7 @@
+.hardware-card {
+  transition: transform 0.3s ease;
+}
+
+.hardware-card:hover {
+  transform: translateY(-5px);
+}
