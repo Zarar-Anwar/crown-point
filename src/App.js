@@ -11,6 +11,7 @@ import './App.css';
 const Home = lazy(() => import('./pages/Home/Home'));
 const Solutions = lazy(() => import('./pages/Solutions/Solutions'));
 const Hardware = lazy(() => import('./pages/Hardware/Hardware'));
+const Products = lazy(() => import('./pages/Products/Products'));
 const Pricing = lazy(() => import('./pages/Pricing/Pricing'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 
@@ -40,6 +41,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/solutions" element={<Solutions />} />
+                <Route path="/products" element={<Products />} />
                 <Route path="/hardware" element={<Hardware />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/contact" element={<Contact />} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Hardware.css';
-import ProductsGrid from '../../components/Products/ProductsGrid';
 
 const Hardware = () => {
   const hardware = [
@@ -248,9 +247,6 @@ const Hardware = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Product gallery from product_images */}
-      <ProductsGrid />
     </div>
   );
 };

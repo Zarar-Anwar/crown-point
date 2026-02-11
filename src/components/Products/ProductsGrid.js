@@ -2,69 +2,93 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './ProductsGrid.css';
 
-// NOTE: Images are expected to be served from /product_images in the public folder.
-// Example: public/product_images/Screenshot 2026-02-11 170909.png
-
+// We first try to load your local screenshots from /product_images.
+// If they are missing (e.g. on Netlify), we gracefully fall back to
+// similar online images so cards never look broken.
 const products = [
   {
     name: 'CrownPoint Duo Station',
     segment: 'Liquor & Retail',
     image: '/product_images/Screenshot 2026-02-11 170909.png',
+    fallback:
+      'https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1200', // POS terminal on counter
   },
   {
     name: 'CrownPoint Compact Terminal',
     segment: 'Countertop POS',
     image: '/product_images/Screenshot 2026-02-11 170940.png',
+    fallback:
+      'https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1200', // Compact terminal
   },
   {
     name: 'CrownPoint Flex Mobile',
     segment: 'Mobile & Delivery',
     image: '/product_images/Screenshot 2026-02-11 170956.png',
+    fallback:
+      'https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1200', // Handheld terminal
   },
   {
     name: 'CrownPoint Flex Tablet',
     segment: 'Table Service',
     image: '/product_images/Screenshot 2026-02-11 171026.png',
+    fallback:
+      'https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1200', // Tablet POS
   },
   {
     name: 'CrownPoint Kitchen Display',
     segment: 'Kitchen Operations',
     image: '/product_images/Screenshot 2026-02-11 171038.png',
+    fallback:
+      'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     name: 'CrownPoint Self-Checkout',
     segment: 'Self-Service',
     image: '/product_images/Screenshot 2026-02-11 171043.png',
+    fallback:
+      'https://images.pexels.com/photos/5632408/pexels-photo-5632408.jpeg?auto=compress&cs=tinysrgb&w=1200', // Self-checkout device
   },
   {
     name: 'CrownPoint Retail Bundle',
     segment: 'Retail Stores',
     image: '/product_images/Screenshot 2026-02-11 171049.png',
+    fallback:
+      'https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     name: 'CrownPoint Liquor Bundle',
     segment: 'Liquor Stores',
     image: '/product_images/Screenshot 2026-02-11 171054.png',
+    fallback:
+      'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     name: 'CrownPoint Quick Service Kit',
     segment: 'QSR & Fast Casual',
     image: '/product_images/Screenshot 2026-02-11 171058.png',
+    fallback:
+      'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     name: 'CrownPoint Restaurant Floor',
     segment: 'Full Service Restaurants',
     image: '/product_images/Screenshot 2026-02-11 171113.png',
+    fallback:
+      'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     name: 'CrownPoint Multi-Store View',
     segment: 'Multi-location Management',
     image: '/product_images/Screenshot 2026-02-11 171118.png',
+    fallback:
+      'https://images.pexels.com/photos/705674/pexels-photo-705674.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     name: 'CrownPoint Reporting Suite',
     segment: 'Analytics & Reporting',
     image: '/product_images/Screenshot 2026-02-11 171125.png',
+    fallback:
+      'https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
 ];
 
@@ -131,6 +155,13 @@ const ProductsGrid = () => {
                   alt={product.name}
                   className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105"
                   loading="lazy"
+                  onError={(e) => {
+                    if (product.fallback && e.target.src !== product.fallback) {
+                      // Fallback to online image if local file is missing
+                      e.target.onerror = null;
+                      e.target.src = product.fallback;
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
