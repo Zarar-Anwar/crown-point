@@ -67,7 +67,7 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <section className="hero-section bg-gradient-to-br from-purple-600 to-purple-800 text-white py-20">
+      <section className="hero-section bg-gradient-to-br from-purple-900 via-purple-800 to-black text-white py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -80,17 +80,17 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="contact-content py-20 bg-gray-50">
+      <section className="contact-content py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="bg-gray-900 border border-purple-900/30 p-8 rounded-xl shadow-lg">
+              <h2 className="text-2xl font-bold text-white mb-6">
                 Send us a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Name *
                   </label>
                   <input
@@ -100,7 +100,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-gray-800 border border-purple-900/30 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all placeholder-gray-500"
                     placeholder="Your name"
                   />
                 </div>
@@ -115,7 +115,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-gray-800 border border-purple-900/30 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all placeholder-gray-500"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -129,7 +129,7 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-gray-800 border border-purple-900/30 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all placeholder-gray-500"
                     placeholder="Your company name"
                   />
                 </div>
@@ -143,7 +143,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 bg-gray-800 border border-purple-900/30 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all placeholder-gray-500"
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
@@ -164,7 +164,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-purple-800 transition-all shadow-lg shadow-purple-900/50"
                 >
                   Send Message
                 </button>
@@ -174,10 +174,10 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-white mb-6">
                   Contact Information
                 </h2>
-                <p className="text-gray-600 mb-8">
+                <p className="text-gray-300 mb-8">
                   Reach out to us through any of these channels. Our team is here to help you find the perfect payment solution for your business.
                 </p>
               </div>
@@ -187,32 +187,32 @@ const Contact = () => {
                   <a
                     key={index}
                     href={info.link}
-                    className="contact-info-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-start group"
+                    className="contact-info-card bg-gray-900 border border-purple-900/30 p-6 rounded-xl shadow-md hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-300 flex items-start group"
                   >
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
                       {info.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">
+                      <h3 className="font-semibold text-white mb-1">
                         {info.title}
                       </h3>
-                      <p className="text-gray-600">{info.content}</p>
+                      <p className="text-gray-300">{info.content}</p>
                     </div>
                   </a>
                 ))}
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100">
-                <h3 className="font-semibold text-gray-900 mb-2">
+              <div className="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-purple-900/30">
+                <h3 className="font-semibold text-white mb-2">
                   Business Hours
                 </h3>
-                <p className="text-gray-600 text-sm mb-2">
+                <p className="text-gray-300 text-sm mb-2">
                   Monday - Friday: 9:00 AM - 6:00 PM PST
                 </p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-300 text-sm">
                   Saturday - Sunday: Closed
                 </p>
-                <p className="text-purple-600 text-sm mt-4 font-semibold">
+                <p className="text-purple-400 text-sm mt-4 font-semibold">
                   Support available 24/7 via email
                 </p>
               </div>

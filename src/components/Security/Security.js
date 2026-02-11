@@ -84,7 +84,7 @@ const Security = () => {
   };
 
   return (
-    <section className="security bg-white py-20">
+    <section className="security bg-black py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -93,10 +93,10 @@ const Security = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Enterprise-Grade Security
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Your business and customer data are protected by industry-leading security measures. 
             We take security seriously so you can focus on growing your business.
           </p>
@@ -112,17 +112,17 @@ const Security = () => {
           {securityFeatures.map((feature, index) => (
             <motion.div
               key={index}
-              className="security-card bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 hover:shadow-lg transition-all duration-300"
+              className="security-card bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-purple-900/30 hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
             >
               <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center text-white mb-4">
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -137,7 +137,7 @@ const Security = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            $0 Liability for Fraudulent Transactions
+            Zero Liability for Fraudulent Transactions
           </h3>
           <p className="text-purple-100 text-lg mb-6 max-w-2xl mx-auto">
             With our comprehensive fraud protection and PCI compliance, you're protected from liability 

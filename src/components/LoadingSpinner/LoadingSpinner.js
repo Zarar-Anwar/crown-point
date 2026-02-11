@@ -4,7 +4,7 @@ import './LoadingSpinner.css';
 
 const LoadingSpinner = () => {
   return (
-    <div className="loading-spinner-container fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div className="loading-spinner-container fixed inset-0 bg-black z-50 flex items-center justify-center">
       <div className="relative">
         <motion.div
           className="loading-ring w-20 h-20 border-4 border-purple-200 rounded-full"

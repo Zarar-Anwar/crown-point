@@ -5,7 +5,7 @@ import './CTA.css';
 
 const CTA = () => {
   return (
-    <section className="cta bg-gradient-to-r from-purple-600 to-purple-800 py-20 relative overflow-hidden">
+    <section className="cta bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 py-20 relative overflow-hidden border-y border-purple-700/30">
       {/* Animated background elements */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"

@@ -14,8 +14,8 @@ const Stats = () => {
       ),
     },
     {
-      number: '$2B+',
-      label: 'Processed Annually',
+      number: '2B+',
+      label: 'Volume Processed Annually',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -67,7 +67,7 @@ const Stats = () => {
   };
 
   return (
-    <section className="stats bg-white py-16">
+    <section className="stats bg-black py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-8"
@@ -79,7 +79,7 @@ const Stats = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="stat-card text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-white border border-purple-100 hover:shadow-lg transition-all duration-300"
+              className="stat-card text-center p-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-purple-900/30 hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.05 }}
             >
@@ -91,7 +91,7 @@ const Stats = () => {
                 {stat.icon}
               </motion.div>
               <motion.div
-                className="text-3xl md:text-4xl font-bold text-gray-900 mb-2"
+                className="text-3xl md:text-4xl font-bold text-white mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -99,7 +99,7 @@ const Stats = () => {
               >
                 {stat.number}
               </motion.div>
-              <div className="text-gray-600 text-sm md:text-base">
+              <div className="text-gray-300 text-sm md:text-base">
                 {stat.label}
               </div>
             </motion.div>

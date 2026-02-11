@@ -51,7 +51,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="testimonials bg-white py-20">
+    <section className="testimonials bg-black py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -60,10 +60,10 @@ const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Trusted by Thousands of Businesses
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             See what our customers have to say about CrownPoint
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="testimonial-card bg-gradient-to-br from-purple-50 to-white p-8 rounded-xl border border-purple-100 shadow-md hover:shadow-lg transition-all duration-300"
+              className="testimonial-card bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-purple-900/30 shadow-md hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
             >
@@ -91,8 +91,8 @@ const Testimonials = () => {
                   {testimonial.avatar}
                 </motion.div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-300">{testimonial.role}</p>
                 </div>
               </div>
               <div className="flex mb-4">
@@ -110,7 +110,7 @@ const Testimonials = () => {
                   </motion.svg>
                 ))}
               </div>
-              <p className="text-gray-700 leading-relaxed italic">
+              <p className="text-gray-300 leading-relaxed italic">
                 "{testimonial.content}"
               </p>
             </motion.div>

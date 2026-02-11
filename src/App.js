@@ -30,7 +30,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App min-h-screen flex flex-col relative">
+      <div className="App min-h-screen flex flex-col relative bg-black">
         <ParticleBackground />
         <FloatingElements />
         <Header />

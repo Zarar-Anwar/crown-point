@@ -16,7 +16,7 @@ const FloatingElements = () => {
       {elements.map((element, index) => (
         <motion.div
           key={index}
-          className="floating-element absolute rounded-full bg-gradient-to-br from-purple-400/20 to-purple-600/20 blur-3xl"
+          className="floating-element absolute rounded-full bg-gradient-to-br from-purple-500/30 to-purple-700/30 blur-3xl"
           style={{
             width: `${element.size}px`,
             height: `${element.size}px`,

@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className="header bg-white shadow-md sticky top-0 z-50"
+      className="header bg-black border-b border-purple-900/30 sticky top-0 z-50 backdrop-blur-md bg-opacity-95"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -39,7 +39,7 @@ const Header = () => {
               >
                 <span className="text-white font-bold text-xl">C</span>
               </motion.div>
-              <span className="text-2xl font-bold text-gray-900">CrownPoint</span>
+              <span className="text-2xl font-bold text-white">CrownPoint</span>
             </Link>
           </motion.div>
 
@@ -54,11 +54,11 @@ const Header = () => {
               >
                 <Link
                   to={link.path}
-                  className={`nav-link ${
-                    isActive(link.path)
-                      ? 'text-purple-600 font-semibold'
-                      : 'text-gray-700 hover:text-purple-600'
-                  } transition-colors duration-200`}
+                className={`nav-link ${
+                  isActive(link.path)
+                    ? 'text-purple-400 font-semibold'
+                    : 'text-gray-300 hover:text-purple-400'
+                } transition-colors duration-200 font-medium`}
                 >
                   {link.label}
                 </Link>
@@ -71,15 +71,15 @@ const Header = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <button className="btn-primary bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200">
-                Get Started
-              </button>
+            <button className="btn-primary bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-lg shadow-purple-900/50">
+              Get Started
+            </button>
             </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-gray-300 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.9 }}
@@ -122,11 +122,11 @@ const Header = () => {
                   <Link
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block py-2 px-4 rounded-lg mb-2 ${
-                      isActive(link.path)
-                        ? 'text-purple-600 font-semibold bg-purple-50'
-                        : 'text-gray-700 hover:bg-gray-50'
-                    } transition-colors duration-200`}
+                className={`block py-2 px-4 rounded-lg mb-2 ${
+                  isActive(link.path)
+                    ? 'text-purple-400 font-semibold bg-purple-900/30'
+                    : 'text-gray-300 hover:bg-gray-800 font-medium'
+                } transition-colors duration-200`}
                   >
                     {link.label}
                   </Link>

@@ -66,7 +66,7 @@ const Hero = () => {
     <AnimatedGradient>
       <section
         ref={containerRef}
-        className="hero bg-gradient-to-br from-purple-50 via-white to-purple-50 py-20 lg:py-32 overflow-hidden relative"
+        className="hero bg-gradient-to-br from-black via-gray-900 to-black py-20 lg:py-32 overflow-hidden relative"
       >
         <motion.div
           style={{ y, opacity }}
@@ -86,7 +86,7 @@ const Hero = () => {
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
                 <motion.h1
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
                   variants={itemVariants}
                 >
                   <motion.span
@@ -97,7 +97,7 @@ const Hero = () => {
                     Payment Solutions
                   </motion.span>
                   <motion.span
-                    className="block text-purple-600 mt-2"
+                    className="block bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mt-2"
                     initial={{ opacity: 0, x: -20, scale: 0.9 }}
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     transition={{ delay: 0.8, duration: 0.6, type: 'spring', stiffness: 200 }}
@@ -107,7 +107,7 @@ const Hero = () => {
                 </motion.h1>
               </motion.div>
               <motion.p
-                className="text-xl text-gray-600 mb-8 leading-relaxed"
+                className="text-xl text-gray-300 mb-8 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
@@ -156,7 +156,7 @@ const Hero = () => {
                 >
                   <Link
                     to="/solutions"
-                    className="btn-secondary bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg border-2 border-purple-600 hover:bg-purple-50 transition-all duration-200 block relative overflow-hidden group"
+                    className="btn-secondary bg-transparent text-purple-400 px-8 py-4 rounded-lg font-semibold text-lg border-2 border-purple-600 hover:bg-purple-900/30 transition-all duration-200 block relative overflow-hidden group"
                   >
                     <motion.span
                       className="relative z-10"
@@ -174,7 +174,7 @@ const Hero = () => {
                 </motion.div>
               </motion.div>
               <motion.div
-                className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-600"
+                className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-400"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.6, staggerChildren: 0.1 }}
@@ -211,7 +211,7 @@ const Hero = () => {
               whileHover="hover"
             >
               <ThreeDCard>
-                <div className="relative bg-white rounded-2xl shadow-2xl p-8 transform-gpu">
+                <div className="relative bg-gray-900 border border-purple-900/50 rounded-2xl shadow-2xl shadow-purple-900/20 p-8 transform-gpu">
                   <motion.div
                     className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-6 text-white mb-4"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -243,7 +243,7 @@ const Hero = () => {
                           animate={{ scale: 1, rotate: 0 }}
                           transition={{ delay: 1.4, type: 'spring', stiffness: 200 }}
                         >
-                          $127.50
+                          127.50
                         </motion.span>
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-purple-400 border-opacity-30">
@@ -272,7 +272,7 @@ const Hero = () => {
                     ].map((stat, index) => (
                       <motion.div
                         key={stat.label}
-                        className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-4 text-center border border-gray-100"
+                        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 text-center border border-purple-900/30"
                         initial={{ opacity: 0, y: 20, scale: 0.8 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ delay: 2 + index * 0.1, type: 'spring', stiffness: 200 }}
@@ -286,7 +286,7 @@ const Hero = () => {
                         >
                           {stat.value}
                         </motion.div>
-                        <div className="text-xs text-gray-600 mt-1">{stat.label}</div>
+                        <div className="text-xs text-gray-400 mt-1">{stat.label}</div>
                       </motion.div>
                     ))}
                   </motion.div>

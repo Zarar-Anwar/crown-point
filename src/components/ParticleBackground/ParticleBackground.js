@@ -17,7 +17,7 @@ const ParticleBackground = () => {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="particle absolute rounded-full bg-purple-400 opacity-20"
+          className="particle absolute rounded-full bg-purple-500 opacity-30"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,

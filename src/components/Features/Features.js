@@ -91,7 +91,7 @@ const Features = () => {
   };
 
   return (
-    <section ref={ref} className="features bg-gray-50 py-20 relative overflow-hidden">
+    <section ref={ref} className="features bg-black py-20 relative overflow-hidden">
       <motion.div
         className="container mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
@@ -105,7 +105,7 @@ const Features = () => {
           transition={{ duration: 0.6 }}
         >
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -113,7 +113,7 @@ const Features = () => {
             Everything You Need to Accept Payments
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-300 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -131,7 +131,7 @@ const Features = () => {
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               <ThreeDCard>
-                <div className="feature-card bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full">
+                <div className="feature-card bg-gray-900 border border-purple-900/30 p-8 rounded-xl shadow-md hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300 h-full">
                   <motion.div
                     className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center text-white mb-6"
                     whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
@@ -140,14 +140,14 @@ const Features = () => {
                     {feature.icon}
                   </motion.div>
                   <motion.h3
-                    className="text-xl font-semibold text-gray-900 mb-3"
+                    className="text-xl font-semibold text-white mb-3"
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: 0.6 + index * 0.1 }}
                   >
                     {feature.title}
                   </motion.h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
                   <motion.div
                     className="mt-4 h-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
                     initial={{ width: 0 }}

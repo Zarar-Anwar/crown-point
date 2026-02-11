@@ -5,46 +5,40 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$29',
-      period: '/month',
       description: 'Perfect for small businesses just getting started',
       features: [
-        'Up to $10K monthly processing',
-        'Basic POS features',
-        'Mobile app access',
-        'Email support',
-        'Standard reporting',
+        'Designed for new and small businesses',
+        'Core POS features for day-to-day operations',
+        'Mobile app access for on-the-go management',
+        'Email support during business hours',
+        'Standard sales and transaction reporting',
       ],
       popular: false,
     },
     {
       name: 'Professional',
-      price: '$79',
-      period: '/month',
       description: 'Ideal for growing businesses with higher transaction volumes',
       features: [
-        'Up to $50K monthly processing',
-        'Advanced POS features',
-        'Inventory management',
-        'Priority support',
-        'Advanced analytics',
-        'Multi-location support',
+        'Built for multi-location and higher-volume merchants',
+        'Advanced POS features for complex workflows',
+        'Inventory management across locations',
+        'Priority support with faster response times',
+        'Advanced analytics and performance insights',
+        'Multi-location user and role management',
       ],
       popular: true,
     },
     {
       name: 'Enterprise',
-      price: 'Custom',
-      period: '',
-      description: 'Tailored solutions for large businesses',
+      description: 'Tailored solutions for large and enterprise businesses',
       features: [
-        'Unlimited processing',
-        'All features included',
-        'Dedicated account manager',
-        '24/7 phone support',
-        'Custom integrations',
-        'White-label options',
-        'SLA guarantee',
+        'Unlimited processing volumes',
+        'All advanced features included',
+        'Dedicated account and implementation manager',
+        '24/7 phone and priority support',
+        'Custom integrations with your existing systems',
+        'White-label and branding options',
+        'Service level agreement (SLA) available',
       ],
       popular: false,
     },
@@ -52,7 +46,7 @@ const Pricing = () => {
 
   return (
     <div className="pricing-page">
-      <section className="hero-section bg-gradient-to-br from-purple-600 to-purple-800 text-white py-20">
+      <section className="hero-section bg-gradient-to-br from-purple-900 via-purple-800 to-black text-white py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -65,13 +59,13 @@ const Pricing = () => {
         </div>
       </section>
 
-      <section className="pricing-plans py-20 bg-gray-50">
+      <section className="pricing-plans py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`pricing-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ${
+                className={`pricing-card bg-gray-900 border border-purple-900/30 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300 ${
                   plan.popular ? 'ring-4 ring-purple-500 transform scale-105' : ''
                 }`}
               >
@@ -81,16 +75,10 @@ const Pricing = () => {
                   </div>
                 )}
                 <div className="text-center mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-2xl font-bold text-white mb-2">
                     {plan.name}
                   </h2>
-                  <div className="flex items-baseline justify-center mb-2">
-                    <span className="text-4xl font-bold text-gray-900">
-                      {plan.price}
-                    </span>
-                    <span className="text-gray-600 ml-1">{plan.period}</span>
-                  </div>
-                  <p className="text-gray-600 text-sm">{plan.description}</p>
+                  <p className="text-gray-300 text-sm">{plan.description}</p>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, idx) => (
@@ -98,7 +86,7 @@ const Pricing = () => {
                       <svg className="w-5 h-5 text-purple-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -109,18 +97,18 @@ const Pricing = () => {
                       : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }`}
                 >
-                  Get Started
+                  Contact Sales
                 </button>
               </div>
             ))}
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-gray-600 mb-4">
-              All plans include a 30-day money-back guarantee. No setup fees. Cancel anytime.
+            <p className="text-gray-300 mb-4">
+              All plans include transparent terms, onboarding support, and no long-term lock-in. Cancel or change plans anytime.
             </p>
-            <p className="text-sm text-gray-500">
-              Transaction fees: 2.6% + $0.10 per transaction (varies by plan)
+            <p className="text-sm text-gray-400">
+              Transaction fees and processing rates are tailored to your business profile. Talk to our team for a custom proposal.
             </p>
           </div>
         </div>

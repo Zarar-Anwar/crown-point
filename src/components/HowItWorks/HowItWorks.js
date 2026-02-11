@@ -69,7 +69,7 @@ const HowItWorks = () => {
   };
 
   return (
-    <section className="how-it-works bg-white py-20">
+    <section className="how-it-works bg-black py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -78,10 +78,10 @@ const HowItWorks = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             How It Works
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Get started with CrownPoint in four simple steps. From signup to your first transaction, we've made it effortless.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="step-card relative bg-gradient-to-br from-purple-50 to-white p-8 rounded-xl border border-purple-100 hover:shadow-xl transition-all duration-300"
+              className="step-card relative bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-purple-900/30 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
             >
@@ -106,10 +106,10 @@ const HowItWorks = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center text-white mb-6">
                 {step.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 {step.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 {step.description}
               </p>
               {index < steps.length - 1 && (
