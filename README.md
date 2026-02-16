@@ -1,181 +1,234 @@
-# CrownPoint - Payment Gateway Application
+# Swypora - Payment Gateway Application
 
-**Version 2.0.0** 🚀✨
+**Version 3.0.0** 🚀✨
 
-A modern, responsive web application for payment gateway and point of sale solutions, built with React.js and styled with Tailwind CSS. Inspired by Clover.com with a beautiful purple and white theme.
+A modern, responsive web application for payment gateway and point of sale solutions, built with React.js (Frontend) and Django (Backend).
 
-**NEW in v2.0**: Advanced 3D animations, particle effects, parallax scrolling, and stunning visual effects!
+## What's New in v3.0
 
-## Features
-
-- 🎨 **Modern UI/UX** - Beautiful purple and white theme designed for payment gateway aesthetics
-- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
-- 🚀 **Fast Performance** - Optimized React components with efficient rendering
-- 🔒 **Secure Design** - UI elements that convey trust and security
-- 📊 **Analytics Ready** - Dashboard-ready components for business insights
-- 🛍️ **Multiple Solutions** - Retail, Restaurant, E-commerce, and Mobile POS solutions
+- **Django Backend API** - Full REST API with dynamic content management
+- **Dynamic Logo** - Logo loaded from backend database
+- **Get Started Modal** - Quick contact form in header
+- **Testimonials Slider** - Animated testimonial carousel
+- **Email Notifications** - SMTP integration for form submissions
+- **Admin Dashboard** - Django admin for managing content
 
 ## Technology Stack
 
+### Frontend
 - **React.js** - Frontend framework
 - **React Router** - Client-side routing
 - **Tailwind CSS** - Utility-first CSS framework
-- **PostCSS** - CSS processing
-- **Create React App** - Build tooling
+- **Framer Motion** - Animations
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
-
-1. Install dependencies:
-```bash
-npm install
-```
-
-2. Start the development server:
-```bash
-npm start
-```
-
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Available Scripts
-
-- `npm start` - Runs the app in development mode
-- `npm run build` - Builds the app for production
-- `npm test` - Launches the test runner
-- `npm run eject` - Ejects from Create React App (one-way operation)
+### Backend
+- **Django** - Python web framework
+- **Django REST Framework** - REST API
+- **SQLite** - Database (easy to switch to PostgreSQL)
 
 ## Project Structure
 
 ```
-crownpoint/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── Header/
-│   │   ├── Footer/
-│   │   ├── Hero/
-│   │   ├── Features/
-│   │   ├── Stats/
-│   │   ├── Testimonials/
-│   │   └── CTA/
-│   ├── pages/
-│   │   ├── Home/
-│   │   ├── Solutions/
-│   │   ├── Hardware/
-│   │   ├── Pricing/
-│   │   └── Contact/
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-├── tailwind.config.js
-└── postcss.config.js
+Swypora/
+├── Frontend/                 # React application
+│   ├── src/
+│   │   ├── components/      # Reusable components
+│   │   │   ├── Header/
+│   │   │   ├── Footer/
+│   │   │   ├── GetStartedModal/
+│   │   │   └── Testimonials/
+│   │   ├── pages/            # Page components
+│   │   ├── services/        # API services
+│   │   └── config.js        # API configuration
+│   └── package.json
+│
+├── Backend/                   # Django application
+│   ├── src/
+│   │   ├── api/             # REST API endpoints
+│   │   ├── core/            # Core models (Application, Contact, etc.)
+│   │   └── services/        # Business logic
+│   │       ├── hardware/
+│   │       ├── pricing/
+│   │       └── solutions/
+│   └── requirements.txt
+│
+├── media/                    # Uploaded files (logo, images)
+├── .gitignore
+└── README.md
 ```
+
+## Quick Start
+
+### Backend Setup
+
+1. Navigate to backend:
+```bash
+cd Backend
+```
+
+2. Create virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Run migrations:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+5. Seed database with sample data:
+```bash
+python manage.py seed_app        # Creates app with logo
+python manage.py seed_hardware   # Adds hardware products
+python manage.py seed_testimonials # Adds testimonials
+```
+
+6. Run server:
+```bash
+python manage.py runserver
+```
+
+Backend will run at: http://localhost:8000
+
+### Frontend Setup
+
+1. Navigate to frontend:
+```bash
+cd Frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start development server:
+```bash
+npm start
+```
+
+Frontend will run at: http://localhost:3000
+
+## API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/application/` | GET | Get app settings (logo, name, contact) |
+| `/api/hardware/` | GET | List hardware products |
+| `/api/hardware-categories/` | GET | List hardware categories |
+| `/api/pricing/` | GET | List pricing plans |
+| `/api/solutions/` | GET | List industry solutions |
+| `/api/testimonials/` | GET | List testimonials |
+| `/api/contact-us/` | POST | Submit contact form |
+| `/api/get-started/` | POST | Submit quick lead form |
+| `/api/newsletter/subscribe/` | POST | Subscribe to newsletter |
+
+## Environment Variables
+
+### Backend (.env)
+```env
+SECRET_KEY=your-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Email (SMTP)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER=your-email@gmail.com
+EMAIL_HOST_PASSWORD=your-app-password
+DEFAULT_FROM_EMAIL=your-email@gmail.com
+```
+
+### Frontend (config.js)
+The frontend config is in `src/config.js`:
+```javascript
+export const API_CONFIG = {
+  API_BASE_URL: 'http://localhost:8000/api',
+  MEDIA_URL: 'http://localhost:8000/media',
+};
+```
+
+## Features
+
+### Dynamic Content
+- Logo loaded from backend
+- Hardware products from database
+- Testimonials from database
+- Pricing plans from database
+- Solutions from database
+
+### Forms
+- **Get Started** - Quick lead form in header (4 fields)
+- **Contact Us** - Full contact form
+- **Newsletter** - Email subscription
+
+### Email Notifications
+Forms send email notifications to the address configured in backend settings.
+
+## Admin Panel
+
+Access Django admin at: http://localhost:8000/admin/
+
+Manage:
+- Application settings (logo, contact info, social links)
+- Hardware products and categories
+- Pricing plans
+- Solutions
+- Testimonials
+- Contact form submissions
+- Get Started leads
 
 ## Pages
 
-- **Home** - Landing page with hero section, features, stats, and testimonials
-- **Solutions** - Overview of different business solutions (Retail, Restaurant, E-commerce, Mobile)
-- **Hardware** - Payment terminal and hardware options
-- **Pricing** - Pricing plans (Starter, Professional, Enterprise)
-- **Contact** - Contact form and business information
-
-## Color Theme
-
-The application uses a purple and white color scheme:
-
-- **Primary Purple**: `#7c3aed` (purple-600)
-- **Dark Purple**: `#6d28d9` (purple-700)
-- **Light Purple**: `#8b5cf6` (purple-500)
-- **Background**: White and light gray tones
-- **Accents**: Purple gradients and highlights
-
-## Customization
-
-### Changing Colors
-
-Edit `tailwind.config.js` to modify the color scheme:
-
-```javascript
-colors: {
-  primary: {
-    // Your custom colors
-  }
-}
-```
-
-### Adding New Pages
-
-1. Create a new component in `src/pages/`
-2. Add a route in `src/App.js`
-3. Add navigation link in `src/components/Header/Header.js`
+- **Home** - Landing page with hero, features, stats, testimonials
+- **Solutions** - Industry solutions (Retail, Restaurant, etc.)
+- **Hardware** - Payment terminals and hardware
+- **Pricing** - Pricing plans
+- **Contact** - Contact form and information
 
 ## Deployment
 
-### Build for Production
-
+### Backend
 ```bash
+cd Backend
+python manage.py collectstatic
+```
+
+### Frontend
+```bash
+cd Frontend
 npm run build
 ```
 
-This creates an optimized production build in the `build` folder.
-
-### Deploy to Hosting Services
-
-The `build` folder can be deployed to:
-- Netlify
-- Vercel
-- AWS S3 + CloudFront
-- GitHub Pages
-- Any static hosting service
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
 ## Version History
 
-### Version 2.0.0 (Current) 🚀
-- **Advanced 3D Animations** - Interactive 3D card effects with mouse tracking
-- **Particle Background System** - Animated floating particles
-- **Parallax Scrolling** - Multi-layer parallax effects
-- **Page Transitions** - Smooth animated page transitions
-- **Loading Animations** - Beautiful multi-ring loading spinner
-- **Animated Gradients** - Morphing gradient backgrounds
-- **Enhanced Micro-interactions** - Advanced hover effects
-- **GPU-Accelerated** - Optimized performance with hardware acceleration
+### v3.0.0 (Current)
+- Django REST API backend
+- Dynamic logo from database
+- Get Started modal form
+- Testimonials slider
+- Email notifications via SMTP
+- GitIgnore files added
 
-### Version 1.0.0
-- Initial stable release
-- Complete multi-page application
-- Industry-specific solutions (Liquor Stores, Retail, Restaurants, QSR)
-- Hardware catalog with bundles
-- Pricing plans
-- Full animation system with Framer Motion
-- Responsive design
-- Security and compliance features
+### v2.0.0
+- Advanced 3D animations
+- Particle effects
+- Parallax scrolling
+- Page transitions
 
-See [CHANGELOG.md](./CHANGELOG.md) for detailed version history.
+### v1.0.0
+- Initial release
+- React frontend
+- Tailwind CSS styling
 
 ## License
 
-This project is created for CrownPoint payment gateway application.
-
-## Support
-
-For questions or support, please contact the development team.
-
----
-
-**Version 2.0.0** - Built with ❤️ using React, Tailwind CSS, and Framer Motion with Advanced 3D Animations
+This project is for Swypora payment gateway application.

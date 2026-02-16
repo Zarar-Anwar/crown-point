@@ -11,6 +11,7 @@ ENV/
 dist/
 build/
 
+
 # Database
 *.sqlite3
 db.sqlite3
