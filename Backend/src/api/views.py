@@ -16,16 +16,29 @@ from src.services.pricing.models import PricingPlan
 from src.services.solutions.models import IndustrySolution
 
 
-class ApplicationViewSet(viewsets.ModelViewSet):
-    queryset = Application.objects.all()
-    serializer_class = ApplicationSerializer
+class ApplicationView(APIView):
+    """Get or update application settings"""
     
-    def get_object(self):
-        # Return the first/only application instance
-        obj, _ = Application.objects.get_or_create(
-            defaults={'name': 'Swypora', 'contact_email': 'support@swypora.com'}
+    def get(self, request):
+        # Get or create the single application instance
+        app, created = Application.objects.get_or_create(
+            defaults={'name': 'CrownPoint', 'contact_email': 'support@crownpoint.com'}
         )
-        return obj
+        serializer = ApplicationSerializer(app)
+        return Response(serializer.data)
+    
+    def put(self, request):
+        app = Application.objects.first()
+        if not app:
+            app = Application.objects.create(
+                name='CrownPoint', 
+                contact_email='support@crownpoint.com'
+            )
+        serializer = ApplicationSerializer(app, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class GetStartedView(APIView):
@@ -54,7 +67,7 @@ Submitted at: {lead.created_at}
                     send_mail(
                         subject,
                         message,
-                        settings.DEFAULT_FROM_EMAIL if hasattr(settings, 'DEFAULT_FROM_EMAIL') else app.contact_email,
+                        settings.DEFAULT_FROM_EMAIL if hasattr(settings, 'DEFAULT_FROM_EMAIL') and settings.DEFAULT_FROM_EMAIL else app.contact_email,
                         [app.contact_email],
                         fail_silently=False,
                     )

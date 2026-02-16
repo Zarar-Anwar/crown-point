@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { getApplication, getMediaUrl } from '../../services/api';
 import './Footer.css';
 
 const Footer = () => {
   const [appData, setAppData] = useState({
-    name: 'Swypora',
+    name: 'CrownPoint',
+    logo: null,
     contact_email: '',
     contact_phone: '',
     address: '',
@@ -21,7 +23,8 @@ const Footer = () => {
         const data = await getApplication();
         if (data) {
           setAppData({
-            name: data.name || 'Swypora',
+            name: data.name || 'CrownPoint',
+            logo: getMediaUrl(data.logo),
             contact_email: data.contact_email || '',
             contact_phone: data.contact_phone || '',
             address: data.address || '',
@@ -66,9 +69,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">{appData.name.charAt(0)}</span>
-              </div>
+              <motion.div
+                className="w-15 h-10 bg-gradient-to-br rounded-lg flex items-center justify-center overflow-hidden"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
+                {appData.logo ? (
+                  <img 
+                    src={appData.logo} 
+                    alt={appData.name} 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-white font-bold text-xl">
+                    {appData.name.charAt(0)}
+                  </span>
+                )}
+              </motion.div>
               <span className="text-2xl font-bold">{appData.name}</span>
             </Link>
             <p className="text-gray-400 text-sm mb-4">

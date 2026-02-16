@@ -51,27 +51,32 @@ const Header = () => {
       >
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo - No motion */}
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center overflow-hidden">
-                {appData.logo ? (
-                  <>
-                  <img 
-                    src={appData.logo} 
-                    alt={appData.name} 
-                    className="w-full h-full object-cover"
+            {/* Logo - With motion but dynamic */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/" className="flex items-center space-x-2">
+                <motion.div
+                  className="w-15 h-10 bg-gradient-to-br  rounded-lg flex items-center justify-center overflow-hidden"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  {appData.logo ? (
+                    <img 
+                      src={appData.logo} 
+                      alt={appData.name} 
+                      className="w-full h-full object-cover"
                     />
-                  <span className="text-white font-bold text-xl">
-                  {appData.name.charAt(0)}
-                </span>
-                    </>
-                ) : (
-                  <span className="text-white font-bold text-xl">
-                    {appData.name.charAt(0)}
-                  </span>
-                )}
-              </div>
-            </Link>
+                  ) : (
+                    <span className="text-white font-bold text-xl">
+                      {appData.name.charAt(0)}
+                    </span>
+                  )}
+                </motion.div>
+                <span className="text-2xl font-bold text-white">{appData.name}</span>
+              </Link>
+            </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
