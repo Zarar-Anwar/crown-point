@@ -1,0 +1,34 @@
+# Django Settings
+# Copy this content to .env file in Backend directory and update with your actual values
+
+# SECURITY WARNING: keep the secret key used in production secret!
+# Generate a new one with: python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+SECRET_KEY=your-super-secret-key-change-this-in-production
+
+# Set to False in production
+DEBUG=False
+
+# Comma-separated list of allowed hosts (no spaces after commas)
+# Example: ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com,123.456.789.0
+ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com,your-server-ip
+
+# CORS Settings
+# Set to False in production and specify allowed origins
+CORS_ALLOW_ALL_ORIGINS=False
+
+# Comma-separated list of CORS allowed origins (no spaces after commas)
+# Example: CORS_ALLOWED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+CORS_ALLOWED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+
+# CSRF Trusted Origins (comma-separated, no spaces after commas)
+# Example: CSRF_TRUSTED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+CSRF_TRUSTED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+
+# Email Settings (optional)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER=your-email@gmail.com
+EMAIL_HOST_PASSWORD=your-app-password
+DEFAULT_FROM_EMAIL=your-email@gmail.com
+
