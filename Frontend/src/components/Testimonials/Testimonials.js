@@ -1,4 +1,4 @@
-e data import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getTestimonials, getMediaUrl } from '../../services/api';
 import './Testimonials.css';
