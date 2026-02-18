@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+e data import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getTestimonials, getMediaUrl } from '../../services/api';
 import './Testimonials.css';
@@ -83,7 +83,9 @@ const Testimonials = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
       const index = (currentIndex + i) % testimonials.length;
-      visible.push(testimonials[index]);
+      if (testimonials[index]) {
+        visible.push(testimonials[index]);
+      }
     }
     return visible;
   };
@@ -121,7 +123,7 @@ const Testimonials = () => {
           {/* Testimonial Cards */}
           <div className="flex gap-6 justify-center items-stretch">
             <AnimatePresence mode="wait">
-              {getVisibleTestimonials().map((testimonial, index) => (
+              {getVisibleTestimonials().filter(t => t).map((testimonial, index) => (
                 <motion.div
                   key={`${currentIndex}-${index}`}
                   initial={{ opacity: 0, x: 100 }}
@@ -131,7 +133,7 @@ const Testimonials = () => {
                   className="testimonial-card flex-1 bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-purple-900/30 shadow-md hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-300 min-w-[300px]"
                 >
                   <div className="flex items-center mb-6">
-                    {testimonial.client_photo ? (
+                    {testimonial?.client_photo ? (
                       <img 
                         src={getMediaUrl(testimonial.client_photo)} 
                         alt={testimonial.client_name}
@@ -147,14 +149,14 @@ const Testimonials = () => {
                       </motion.div>
                     )}
                     <div>
-                      <h4 className="font-semibold text-white">{testimonial.client_name}</h4>
+                      <h4 className="font-semibold text-white">{testimonial?.client_name || 'Anonymous'}</h4>
                       <p className="text-sm text-gray-300">
-                        {testimonial.client_position}{testimonial.client_company && `, ${testimonial.client_company}`}
+                        {testimonial?.client_position || ''}{testimonial?.client_company && `, ${testimonial.client_company}`}
                       </p>
                     </div>
                   </div>
                   <div className="flex mb-4">
-                    {[...Array(testimonial.rating || 5)].map((_, i) => (
+                    {[...Array(testimonial?.rating || 5)].map((_, i) => (
                       <motion.svg
                         key={i}
                         className="w-5 h-5 text-yellow-400"
@@ -169,7 +171,7 @@ const Testimonials = () => {
                     ))}
                   </div>
                   <p className="text-gray-300 leading-relaxed italic">
-                    "{testimonial.testimonial}"
+                    "{testimonial?.testimonial || ''}"
                   </p>
                 </motion.div>
               ))}

@@ -125,7 +125,7 @@ sudo nano /etc/nginx/sites-available/crownpoint
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com www.your-domain.com;  # Replace with your domain or IP
+    server_name swypora.com www.swypora.com; 
 
     # Frontend static files
     root /home/ubuntu/crown-point/Frontend/build;
@@ -300,17 +300,25 @@ scp -r build/* user@your-server:/path/to/Frontend/build/
 
 ```bash
 # Set ownership
-sudo chown -R $USER:www-data /path/to/your/crown-point
+sudo chown -R $USER:www-data /home/ubuntu/crown-point
 
-# Set directory permissions
-sudo find /path/to/your/crown-point -type d -exec chmod 755 {} \;
+# Set directory permissions (755 = rwxr-xr-x)
+sudo find /home/ubuntu/crown-point -type d -exec chmod 755 {} \;
 
-# Set file permissions
-sudo find /path/to/your/crown-point -type f -exec chmod 644 {} \;
+# Set file permissions (644 = rw-r--r--)
+sudo find /home/ubuntu/crown-point -type f -exec chmod 644 {} \;
+
+# IMPORTANT: Restore execute permissions for binaries (chmod 644 removes them!)
+sudo find /home/ubuntu/crown-point/Backend/venv/bin -type f -exec chmod 755 {} \;
+
+# Ensure build directory is accessible by nginx
+sudo chmod -R 755 /home/ubuntu/crown-point/Frontend/build
 
 # Make sure gunicorn socket directory is writable
-sudo chmod 755 /path/to/your/Backend
+sudo chmod 755 /home/ubuntu/crown-point/Backend
 ```
+
+**Important Note:** The `chmod 644` command removes execute permissions from all files, including Python executables. Always restore execute permissions for binaries in the `venv/bin` directory after setting file permissions.
 
 ---
 
@@ -342,7 +350,7 @@ sudo journalctl -u crownpoint -f
 sudo apt install certbot python3-certbot-nginx -y
 
 # Get SSL certificate (replace with your domain)
-sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+sudo certbot --nginx -d swypora.com -d www.swypora.com
 
 # Certbot will automatically update nginx config
 # Test auto-renewal
