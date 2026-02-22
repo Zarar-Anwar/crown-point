@@ -194,3 +194,6 @@ site/
 # Debug files
 debug.log
 *.log
+
+# Ignore internal draft/source content file
+Requirements/content.txt

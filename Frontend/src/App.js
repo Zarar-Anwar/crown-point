@@ -14,6 +14,10 @@ const Hardware = lazy(() => import('./pages/Hardware/Hardware'));
 const Products = lazy(() => import('./pages/Products/Products'));
 const Pricing = lazy(() => import('./pages/Pricing/Pricing'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
+const HelpCenter = lazy(() => import('./pages/HelpCenter/HelpCenter'));
+const Documentation = lazy(() => import('./pages/Documentation/Documentation'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService/TermsOfService'));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +49,10 @@ function App() {
                 <Route path="/hardware" element={<Hardware />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/help-center" element={<HelpCenter />} />
+                <Route path="/documentation" element={<Documentation />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
               </Routes>
             </PageTransition>
           </Suspense>

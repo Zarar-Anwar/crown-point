@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { getHardware, getHardwareCategories, getMediaUrl } from '../../services/api';
 import './Hardware.css';
 
 const Hardware = () => {
+  const navigate = useNavigate();
   const [hardware, setHardware] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -170,7 +172,10 @@ const Hardware = () => {
                       ))}
                     </ul>
                   )}
-                  <button className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                  <button
+                    onClick={() => navigate('/contact')}
+                    className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                  >
                     Contact Sales
                   </button>
                 </motion.div>

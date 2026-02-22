@@ -54,12 +54,12 @@ name: data.name || 'Swypora',
       { label: 'Contact', path: '/contact' },
     ],
     support: [
-      { label: 'Help Center', path: '#' },
-      { label: 'Documentation', path: '#' },
+      { label: 'Help Center', path: '/help-center' },
+      { label: 'Documentation', path: '/documentation' },
     ],
     legal: [
-      { label: 'Privacy Policy', path: '#' },
-      { label: 'Terms of Service', path: '#' },
+      { label: 'Privacy Policy', path: '/privacy-policy' },
+      { label: 'Terms of Service', path: '/terms-of-service' },
     ],
   };
 
