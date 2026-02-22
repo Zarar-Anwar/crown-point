@@ -1,5 +1,5 @@
 """
-Django settings for CrownPoint project.
+Django settings for Swypora project.
 """
 
 from pathlib import Path

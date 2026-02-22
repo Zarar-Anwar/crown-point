@@ -1,5 +1,5 @@
 """
-WSGI config for CrownPoint project.
+WSGI config for Swypora project.
 """
 
 import os

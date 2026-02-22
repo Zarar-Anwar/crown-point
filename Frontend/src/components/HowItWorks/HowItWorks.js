@@ -82,7 +82,7 @@ const HowItWorks = () => {
             How It Works
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Get started with CrownPoint in four simple steps. From signup to your first transaction, we've made it effortless.
+            Get started with Swypora in four simple steps. From signup to your first transaction, we've made it effortless.
           </p>
         </motion.div>
 

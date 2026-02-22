@@ -102,3 +102,4 @@ curl http://localhost/
 4. Test nginx config: `sudo nginx -t`
 5. Restart services: `sudo systemctl restart nginx && sudo systemctl restart crownpoint`
 
+

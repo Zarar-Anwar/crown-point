@@ -1,5 +1,5 @@
 """
-ASGI config for CrownPoint project.
+ASGI config for Swypora project.
 """
 
 import os

@@ -112,7 +112,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
               >
-                Accept payments anywhere, anytime with CrownPoint's secure and reliable payment gateway. 
+                Accept payments anywhere, anytime with Swypora's secure and reliable payment gateway. 
                 Built for modern businesses ready to scale. Trusted by 50,000+ merchants nationwide.
               </motion.p>
               <motion.div
@@ -220,7 +220,7 @@ const Hero = () => {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <p className="text-purple-200 text-sm">CrownPoint</p>
+<p className="text-purple-200 text-sm">Swypora</p>
                         <p className="text-2xl font-bold">Payment Terminal</p>
                       </div>
                       <motion.div

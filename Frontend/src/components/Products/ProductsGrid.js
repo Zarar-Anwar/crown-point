@@ -7,84 +7,84 @@ import './ProductsGrid.css';
 // similar online images so cards never look broken.
 const products = [
   {
-    name: 'CrownPoint Duo Station',
+    name: 'Swypora Duo Station',
     segment: 'Liquor & Retail',
     image: '/product_images/Screenshot 2026-02-11 170909.png',
     fallback:
       'https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1200', // POS terminal on counter
   },
   {
-    name: 'CrownPoint Compact Terminal',
+    name: 'Swypora Compact Terminal',
     segment: 'Countertop POS',
     image: '/product_images/Screenshot 2026-02-11 170940.png',
     fallback:
       'https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1200', // Compact terminal
   },
   {
-    name: 'CrownPoint Flex Mobile',
+    name: 'Swypora Flex Mobile',
     segment: 'Mobile & Delivery',
     image: '/product_images/Screenshot 2026-02-11 170956.png',
     fallback:
       'https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1200', // Handheld terminal
   },
   {
-    name: 'CrownPoint Flex Tablet',
+    name: 'Swypora Flex Tablet',
     segment: 'Table Service',
     image: '/product_images/Screenshot 2026-02-11 171026.png',
     fallback:
       'https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1200', // Tablet POS
   },
   {
-    name: 'CrownPoint Kitchen Display',
+    name: 'Swypora Kitchen Display',
     segment: 'Kitchen Operations',
     image: '/product_images/Screenshot 2026-02-11 171038.png',
     fallback:
       'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
-    name: 'CrownPoint Self-Checkout',
+    name: 'Swypora Self-Checkout',
     segment: 'Self-Service',
     image: '/product_images/Screenshot 2026-02-11 171043.png',
     fallback:
       'https://images.pexels.com/photos/5632408/pexels-photo-5632408.jpeg?auto=compress&cs=tinysrgb&w=1200', // Self-checkout device
   },
   {
-    name: 'CrownPoint Retail Bundle',
+    name: 'Swypora Retail Bundle',
     segment: 'Retail Stores',
     image: '/product_images/Screenshot 2026-02-11 171049.png',
     fallback:
       'https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
-    name: 'CrownPoint Liquor Bundle',
+    name: 'Swypora Liquor Bundle',
     segment: 'Liquor Stores',
     image: '/product_images/Screenshot 2026-02-11 171054.png',
     fallback:
       'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
-    name: 'CrownPoint Quick Service Kit',
+    name: 'Swypora Quick Service Kit',
     segment: 'QSR & Fast Casual',
     image: '/product_images/Screenshot 2026-02-11 171058.png',
     fallback:
       'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
-    name: 'CrownPoint Restaurant Floor',
+    name: 'Swypora Restaurant Floor',
     segment: 'Full Service Restaurants',
     image: '/product_images/Screenshot 2026-02-11 171113.png',
     fallback:
       'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
-    name: 'CrownPoint Multi-Store View',
+    name: 'Swypora Multi-Store View',
     segment: 'Multi-location Management',
     image: '/product_images/Screenshot 2026-02-11 171118.png',
     fallback:
       'https://images.pexels.com/photos/705674/pexels-photo-705674.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
-    name: 'CrownPoint Reporting Suite',
+    name: 'Swypora Reporting Suite',
     segment: 'Analytics & Reporting',
     image: '/product_images/Screenshot 2026-02-11 171125.png',
     fallback:
@@ -127,7 +127,7 @@ const ProductsGrid = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            CrownPoint Product Line
+            Swypora Product Line
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Purpose-built hardware and software combinations for liquor stores, retail, restaurants,

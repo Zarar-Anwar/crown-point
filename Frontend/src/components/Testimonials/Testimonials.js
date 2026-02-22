@@ -22,7 +22,7 @@ const Testimonials = () => {
             client_position: 'Owner',
             client_company: 'Bloom Boutique',
             rating: 5,
-            testimonial: 'CrownPoint has transformed how we handle payments. The setup was incredibly easy, and our customers love the seamless checkout experience. Sales have increased by 30% since switching.'
+            testimonial: 'Swypora has transformed how we handle payments. The setup was incredibly easy, and our customers love the seamless checkout experience. Sales have increased by 30% since switching.'
           },
           {
             client_name: 'Michael Chen',

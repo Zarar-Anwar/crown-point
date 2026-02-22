@@ -66,7 +66,7 @@ const Solutions = () => {
     },
     {
       title: 'E-Commerce Integration',
-      description: 'Seamlessly integrate CrownPoint with your online store. Accept payments, manage orders, sync inventory, and handle shipping all from one unified platform. Supports all major e-commerce platforms.',
+      description: 'Seamlessly integrate Swypora with your online store. Accept payments, manage orders, sync inventory, and handle shipping all from one unified platform. Supports all major e-commerce platforms.',
       features: [
         'Online Payment Processing',
         'Order Management System',

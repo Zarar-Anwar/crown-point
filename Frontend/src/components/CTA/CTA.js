@@ -65,7 +65,7 @@ const CTA = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Join thousands of businesses already using CrownPoint to accept payments and grow their revenue.
+            Join thousands of businesses already using Swypora to accept payments and grow their revenue.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"

@@ -1,4 +1,10 @@
-# Python
+# ============================================
+# CrownPoint Project - Main .gitignore
+# ============================================
+
+# ============================================
+# Python / Django (Backend)
+# ============================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,25 +13,184 @@ __pycache__/
 env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 *.egg-info/
 dist/
 build/
-Requirements
-# Database
-*.sqlite3
-db.sqlite3
+*.egg
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+.Python
 
-# IDE
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/Backend/staticfiles/
+/Backend/media/
+*.sqlite3
+
+# Django migrations (keep structure, ignore if needed)
+# Uncomment if you want to ignore migrations
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# ============================================
+# Environment Variables (CRITICAL - NEVER COMMIT)
+# ============================================
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+*.env
+.envrc
+
+# ============================================
+# Node.js / React (Frontend)
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# React build output
+/Frontend/build/
+/Frontend/dist/
+/Frontend/.next/
+/Frontend/out/
+
+# Testing
+/Frontend/coverage/
+*.lcov
+.nyc_output
+
+# Production
+/Frontend/build
+/Frontend/dist
+
+# ============================================
+# IDE and Editor Files
+# ============================================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
 
-# OS
+# ============================================
+# OS Files
+# ============================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+Desktop.ini
 
-# Environment
-.env.local
-.env.*.local
+# ============================================
+# Logs and Debug Files
+# ============================================
+*.log
+logs/
+debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ============================================
+# Database Files
+# ============================================
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+db.sqlite3
+db.sqlite3-journal
+
+# ============================================
+# Media and Static Files (User Uploads)
+# ============================================
+# Keep media structure but ignore uploaded files
+/Backend/media/*
+!/Backend/media/.gitkeep
+/Backend/staticfiles/*
+!/Backend/staticfiles/.gitkeep
+
+# ============================================
+# Temporary Files
+# ============================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# ============================================
+# Package Manager Files (Optional)
+# ============================================
+# Uncomment if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# poetry.lock
+# Pipfile.lock
+
+# ============================================
+# Deployment and Server Files
+# ============================================
+*.pem
+*.key
+*.crt
+*.cert
+.htaccess
+.htpasswd
+
+# ============================================
+# Documentation Build
+# ============================================
+docs/_build/
+site/
+
+# ============================================
+# Misc
+# ============================================
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+
+# ============================================
+# Project Specific
+# ============================================
+# Requirements folder (if contains sensitive data)
+# /Requirements/
+
+# Debug files
+debug.log
+*.log

@@ -1,5 +1,5 @@
 """
-URL configuration for CrownPoint project.
+URL configuration for Swypora project.
 """
 from django.contrib import admin
 from django.urls import path, include
