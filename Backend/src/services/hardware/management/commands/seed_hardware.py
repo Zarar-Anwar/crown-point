@@ -190,8 +190,14 @@ class Command(BaseCommand):
                 # Create product without image first
                 product, created = Hardware.objects.get_or_create(
                     slug=prod_data['slug'],
-                    defaults={**prod_data, 'category': category}
+                    defaults={**prod_data, 'category': category, 'is_active': True}
                 )
+                
+                # Ensure product is active (update existing products too)
+                if not product.is_active:
+                    product.is_active = True
+                    product.save()
+                    self.stdout.write(f'  Activated product: {product.name}')
                 
                 # Try to set image if file exists
                 if full_image_path and os.path.exists(full_image_path) and not product.image:

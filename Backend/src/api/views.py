@@ -22,7 +22,10 @@ class ApplicationView(APIView):
     def get(self, request):
         # Get or create the single application instance
         app, created = Application.objects.get_or_create(
-defaults={'name': 'Swypora', 'contact_email': 'support@swypora.com'}
+            defaults={
+                'name': 'Swypora',
+                'contact_email': 'support@swypora.com',
+            }
         )
         serializer = ApplicationSerializer(app)
         return Response(serializer.data)
@@ -30,9 +33,9 @@ defaults={'name': 'Swypora', 'contact_email': 'support@swypora.com'}
     def put(self, request):
         app = Application.objects.first()
         if not app:
-app = Application.objects.create(
-                name='Swypora', 
-                contact_email='support@swypora.com'
+            app = Application.objects.create(
+                name='Swypora',
+                contact_email='support@swypora.com',
             )
         serializer = ApplicationSerializer(app, data=request.data, partial=True)
         if serializer.is_valid():

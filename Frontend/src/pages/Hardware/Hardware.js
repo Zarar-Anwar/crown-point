@@ -16,11 +16,19 @@ const Hardware = () => {
           getHardware(),
           getHardwareCategories()
         ]);
-        setHardware(hardwareData);
-        setCategories(categoriesData);
+        const normalizedHardware = Array.isArray(hardwareData)
+          ? hardwareData
+          : (hardwareData?.results || []);
+        const normalizedCategories = Array.isArray(categoriesData)
+          ? categoriesData
+          : (categoriesData?.results || []);
+
+        setHardware(normalizedHardware);
+        setCategories(normalizedCategories);
       } catch (error) {
         console.error('Error fetching hardware:', error);
         setHardware([]);
+        setCategories([]);
       } finally {
         setLoading(false);
       }
